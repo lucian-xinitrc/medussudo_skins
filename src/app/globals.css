@@ -24,3 +24,188 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.minecraft {
+  font-family: var(--font-minecraft), monospace;
+}
+
+
+.hero {
+  position: relative;
+  background-image: url("/header_bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.glass {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  color: white;
+  display:block;
+  width: 80%;
+} 
+
+.navbar {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align:center;
+  padding: 32px;
+  color: white;
+  width: 100%;
+} 
+
+.social {
+  background: #000;
+}
+
+.social::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -100px;
+  height: 100px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 20, 28, 0) 0%,
+    rgba(0, 10, 14, 0.25) 35%,
+    rgba(0, 0, 0, 0.7) 75%,
+    #000 100%
+  );
+}
+
+@media (prefers-color-scheme: light) {
+  .social {
+    background: transparent;
+  }
+
+  .social::before {
+    display: none;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+    background: #00a9c7;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #00a9c7 transparent;
+}
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+/* Slides */
+.embla {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+}
+
+/* Show one main card and parts of neighbors */
+.embla__slide {
+  position: relative;
+  flex: 0 0 55%;
+  min-width: 0;
+  padding: 0 20px;
+}
+
+/* Scale inactive cards */
+.embla__slide > * {
+  transform: scale(0.85);
+  opacity: 0.5;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* Active card */
+.embla__slide--active > * {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 75%;
+  }
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #00a9c7 transparent;
+}
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .embla__slide {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .embla__slide > * {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.embla__slide__img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+input, textarea {
+  background-color:transparent;
+}
