@@ -3,15 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
+import SkinViewer from "./skinview.js";
 import './globals.css';
 
-const SPortfolioCard = ({title, type, photo, desc, name, loc, stars}) => {
+const SPortfolioCard = ({title, type, photo, desc, skin, name, loc, stars}) => {
 	return (
 		<div className="rounded-xl dark:bg-black pb-40 p-5 sm:p-5 border border-solid dark:border-white/[.245] sm:h-[650px] 2xl:h-full transition duration-700 easy-in-out dark:hover:bg-slate-950 overflow-y-hidden">
 			<h1 className="text-center py-5 dark:text-[#ffffff] text-2xl sm:text-4xl font-bold">{title}</h1>
-
+      <div className="flex justify-center">
+         <SkinViewer skin={skin} />
+        </div>
 			<div className="flex justify-center ">
-			
+			 
 			<div className="w-full content-center overflow-scroll w-100 h-70 sm:h-100 2xl:h-100 no-scrollbar">
 				<Image
 			        src={photo}
@@ -21,6 +24,7 @@ const SPortfolioCard = ({title, type, photo, desc, name, loc, stars}) => {
 			        width={1000}
 			        height={2000}
 			      />
+            
 			</div>
 		  </div>
 		  <div className="w-full h-50 overflow:hidden my-10">
@@ -69,6 +73,7 @@ const Portfolio = () => {
 <SPortfolioCard
       key="vforvendetta"
       title="V For Vendetta"
+      skin="/images/skins/V/778f5c121ca90d5a3e8ade1edb7049ac558f7432.png"
       photo="/images/vforvendetta.jpg"
       desc="Minecraft Skin"
       name="V For Vendetta Skin"
@@ -79,6 +84,7 @@ const Portfolio = () => {
       key="zerotwo"
       title="Zero Two 002"
       type="Minecraft Skin"
+      skin="/images/skins/Maui/94ec5354a996e7f659b16bc5a810bc60c7e351e4.png"
       photo="/images/zerotwo.jpg"
       desc="Zero Two Skins"
     />,
@@ -94,6 +100,7 @@ const Portfolio = () => {
       key="aliens"
       title="Alien Couple"
       type="Minecraft Skin"
+      skin="/images/skins/Alien/898e8c6111ee59814cc8ce1c53366c320a86d679.png"
       photo="/images/aliencouple.jpg"
       desc="Alien Couple Skins"
       stars="3"
