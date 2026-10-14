@@ -6,7 +6,7 @@ export default function Home() {
     <div className="hero h-full sm:h-full bg-black w-full items-center content-center">
       <div className="w-full flex justify-center p-0 py-10 sm:p-10">
         <div className="glass">
-         <h1 className="minecraft block sm:m-5 text-center text-2xl sm:text-3xl">Medussudo</h1>
+         <h1 className="minecraft mt-10 block sm:m-5 text-center text-2xl sm:text-3xl">Medussudo</h1>
           <div className="flex justify-center">
             <div className="w-[200px] h-[200px] bg-slate-950 rounded-full mt-10 mb-10 border-[2px] border-white/[.145]">
           </div>
