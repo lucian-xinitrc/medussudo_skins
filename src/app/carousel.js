@@ -10,7 +10,7 @@ const SPortfolioCard = ({title, type, photo, desc, skin, skin2, name, loc, typ})
 	return (
 		<div className="rounded-xl dark:bg-black pb-40 p-5 sm:p-5 border border-solid dark:border-white/[.245] sm:h-[650px] 2xl:h-full transition duration-700 easy-in-out dark:hover:bg-slate-950 overflow-y-hidden">
 			<h1 className="text-center py-5 dark:text-[#ffffff] text-2xl sm:text-4xl font-bold">{title}</h1>
-      <div className="flex justify-center">
+      <div className="sm:flex sm:justify-center">
          {typ === "twins" ? (<div className="flex"> <SkinViewer skin={skin} /> <SkinViewer skin={skin2} /> </div>) : (<SkinViewer skin={skin} />)}
         </div>
 			<div className="flex justify-center ">
